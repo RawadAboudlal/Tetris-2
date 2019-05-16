@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PieceSoftDrop.wav-2a7674148e4498f290a17d5163bbe334.sample"
+
+[deps]
+
+source_file="res://sfx/PieceSoftDrop.wav"
+dest_files=[ "res://.import/PieceSoftDrop.wav-2a7674148e4498f290a17d5163bbe334.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
