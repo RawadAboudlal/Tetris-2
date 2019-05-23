@@ -5,24 +5,31 @@
 [node name="Z" type="Node2D"]
 
 [node name="Block" parent="." instance=ExtResource( 1 )]
-color = Color( 0.936009, 0.0999756, 0.984375, 1 )
+margin_left = -48.0
+margin_top = -32.0
+margin_right = -16.0
+margin_bottom = 0.0
+color = Color( 1, 0, 0, 1 )
 
 [node name="Block2" parent="." instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_top = 32.0
-margin_right = 96.0
-margin_bottom = 64.0
-color = Color( 0.936009, 0.0999756, 0.984375, 1 )
+margin_left = 16.0
+margin_right = 48.0
+color = Color( 1, 0, 0, 1 )
 
 [node name="Block3" parent="." instance=ExtResource( 1 )]
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 64.0
-margin_bottom = 64.0
-color = Color( 0.936009, 0.0999756, 0.984375, 1 )
+margin_left = -16.0
+margin_right = 16.0
+color = Color( 1, 0, 0, 1 )
 
 [node name="Block4" parent="." instance=ExtResource( 1 )]
-margin_left = 32.0
-margin_right = 64.0
-color = Color( 0.936009, 0.0999756, 0.984375, 1 )
+margin_left = -16.0
+margin_top = -32.0
+margin_right = 16.0
+margin_bottom = 0.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -48, -32, 16, -32, 16, 0, 48, 0, 48, 32, -16, 32, -16, 0, -48, 0 )
 

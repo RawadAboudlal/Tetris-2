@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Block.png-aa5d467c4208a23681872d733c317ad8.stex"
+path="res://.import/tetris-logo.png-c96653e21af34364b9c1c17d46cf639e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Block.png"
-dest_files=[ "res://.import/Block.png-aa5d467c4208a23681872d733c317ad8.stex" ]
+source_file="res://main/tetris-logo.png"
+dest_files=[ "res://.import/tetris-logo.png-c96653e21af34364b9c1c17d46cf639e.stex" ]
 
 [params]
 
