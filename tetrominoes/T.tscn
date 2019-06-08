@@ -1,33 +1,40 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://tetrominoes/Block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tetrominoes/BaseTetromino.tscn" type="PackedScene" id=1]
 
-[node name="T" type="Node2D"]
+[node name="T" index="0" instance=ExtResource( 1 )]
+width = 3
+height = 2
 
-[node name="Block" parent="." instance=ExtResource( 1 )]
-margin_left = 16.0
-margin_right = 48.0
+[node name="Block" parent="." index="0"]
+position = Vector2( -16, -16 )
+
+[node name="ColorRect" parent="Block" index="0"]
 color = Color( 0.501961, 0, 0.501961, 1 )
 
-[node name="Block2" parent="." instance=ExtResource( 1 )]
-margin_left = -48.0
-margin_right = -16.0
+[node name="Block2" parent="." index="1"]
+position = Vector2( -48, 16 )
+
+[node name="ColorRect" parent="Block2" index="0"]
 color = Color( 0.501961, 0, 0.501961, 1 )
 
-[node name="Block3" parent="." instance=ExtResource( 1 )]
-margin_left = -16.0
-margin_right = 16.0
+[node name="Block3" parent="." index="2"]
+position = Vector2( -16, 16 )
+
+[node name="ColorRect" parent="Block3" index="0"]
 color = Color( 0.501961, 0, 0.501961, 1 )
 
-[node name="Block4" parent="." instance=ExtResource( 1 )]
-margin_left = -16.0
-margin_top = -32.0
-margin_right = 16.0
-margin_bottom = 0.0
+[node name="Block4" parent="." index="3"]
+position = Vector2( 16, 16 )
+
+[node name="ColorRect" parent="Block4" index="0"]
 color = Color( 0.501961, 0, 0.501961, 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( -16, -32, 16, -32, 16, 0, 48, 0, 48, 32, -48, 32, -48, 0, -16, 0 )
+[editable path="Block"]
 
+[editable path="Block2"]
+
+[editable path="Block3"]
+
+[editable path="Block4"]
