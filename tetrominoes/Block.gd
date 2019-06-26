@@ -27,7 +27,7 @@ func _physics_process(delta):
 		emit_signal("ray_collision_detected", ray.get_collider())
 
 # Change to different name?
-func counter_rotate(angle):
+func safe_rotate(angle):
 	block_sprite.rotate(angle)
 	ray.rotate(angle)
 

@@ -45,9 +45,6 @@ func spawn_tetromino():
 
 func place_tetromino():
 	
-	if turn_counter >= 10:
-		return
-	
 	var tetromino_blocks = current_tetromino.get_children()
 	
 	for block in tetromino_blocks:
@@ -72,7 +69,6 @@ func update_shadow(y):
 func _on_FallTimer_timeout():
 	
 	if current_tetromino != null:
-		
 		current_tetromino.shift_down()
 
 func _on_DelayTimer_timeout():
