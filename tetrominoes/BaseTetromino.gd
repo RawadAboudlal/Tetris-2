@@ -3,8 +3,13 @@ extends RigidBody2D
 signal on_place()
 signal update_ground_position(y)
 
-export var width: int
-export var height: int
+export var block_width: int
+export var block_height: int
+
+onready var blocks = $Blocks
+
+var width setget , get_tetromino_width
+var height setget , get_tetromino_height
 
 func _physics_process(delta):
 	
@@ -22,7 +27,7 @@ func _physics_process(delta):
 	
 	var colliders = []
 	
-	for block in get_children():
+	for block in blocks.get_children():
 		if block.ray.is_colliding():
 			var collider = block.ray.get_collider()
 			colliders.append(collider)
@@ -45,7 +50,7 @@ func _physics_process(delta):
 	
 
 func _process(delta):
-	for block in get_children():
+	for block in blocks.get_children():
 		pass
 
 func shift_down():
@@ -92,8 +97,15 @@ func _rotate(angle):
 	var would_collide = test_motion(Vector2(0, 0))
 	
 	if would_collide:
+		rotate(-angle)
+	else:
+		update_block_rotations(angle)
+	
+	return
+	
+	if would_collide:
 		
-		var maxOffset = int(max(width / 2, height / 2))
+		var maxOffset = int(max(get_tetromino_width() / 2, get_tetromino_height() / 2))
 		
 		var collision = Physics2DTestMotionResult.new()
 	
@@ -121,7 +133,6 @@ func _rotate(angle):
 			would_collide = test_motion(Vector2(0, 0), true, 0.08, collision)
 			
 			if !would_collide:
-				print("Right kick worked, moved by: ", offset)
 				update_block_rotations(angle)
 				return
 			
@@ -135,7 +146,6 @@ func _rotate(angle):
 			#collision = move_and_collide(Vector2(0, 0), true, true, true)
 			
 			if !would_collide:
-				print("Left kick worked, moved by: ", offset)
 				update_block_rotations(angle)
 				return
 			
@@ -147,7 +157,6 @@ func _rotate(angle):
 			would_collide = test_motion(Vector2(0, 0), true, 0.08, collision)
 			
 			if !would_collide:
-				print("Up kick worked, moved by: ", offset)
 				update_block_rotations(angle)
 				return
 			
@@ -162,6 +171,14 @@ func _rotate(angle):
 		
 	
 func update_block_rotations(angle):
-	for block in get_children():
+	for block in blocks.get_children():
 		block.safe_rotate(-angle)
-	
+
+func get_blocks():
+	return blocks.get_children()
+
+func get_tetromino_width():
+	return Block.BLOCK_SIZE * block_width
+
+func get_tetromino_height():
+	return Block.BLOCK_SIZE * block_height

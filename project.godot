@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "CollisionShape2D",
+"base": "Node2D",
 "class": "Block",
 "language": "GDScript",
 "path": "res://tetrominoes/Block.gd"
@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="Tetris 2"
 run/main_scene="res://main/MainMenu.tscn"
 config/icon="res://main/tetris-logo.png"
+
+[autoload]
+
+Tetrominoes="*res://Tetrominoes.gd"
 
 [debug]
 

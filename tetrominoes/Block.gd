@@ -1,4 +1,4 @@
-extends CollisionShape2D
+extends Node2D
 class_name Block
 
 const BLOCK_SIZE = 32
@@ -31,5 +31,9 @@ func safe_rotate(angle):
 	block_sprite.rotate(angle)
 	ray.rotate(angle)
 
+# Totally change this. maybe make a global enum with the properties of all the tetrominoes
+# (instead of getting them from instances of the specific scenes). Definitely make another
+# set of tetrominoes specifically for showing in the placeholder slots (e.g. PlaceHolderI,
+# PlaceHolder).
 func get_block_color():
 	return color_rect.get_frame_color()
